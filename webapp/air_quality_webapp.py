@@ -3,7 +3,6 @@
 #app will open in a new tab in default web browser
 
 import pandas as pd
-import matplotlib.pyplot as plt
 import numpy as np
 import streamlit as st
 #machine learning
