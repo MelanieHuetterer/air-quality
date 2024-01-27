@@ -6,6 +6,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import streamlit as st
+import path
 #machine learning
 from sklearn.linear_model import Lasso
 from sklearn.ensemble import GradientBoostingRegressor
@@ -24,6 +25,9 @@ from datetime import timedelta
 #pip freeze for versions
 
 st.header(':blue[Air Quality] :fog:', divider='blue')
+
+dir = path.Path(__file__).abspath()
+sys.path.append(dir.parent.parent)
 
 @st.cache_data
 def load_data():
