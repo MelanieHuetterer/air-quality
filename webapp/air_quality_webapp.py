@@ -31,7 +31,7 @@ sys.path.append(dir.parent.parent)
 
 @st.cache_data
 def load_data():
-    df = pd.read_excel("../data/data combined (aqcin)/cities.xlsx")
+    df = pd.read_excel("./data/data combined (aqcin)/cities.xlsx")
     df['date'] = pd.to_datetime(df['date'])
     df['pm10'] = pd.to_numeric(df['pm10'], downcast='float')
     df['pm25'] = pd.to_numeric(df['pm25'], downcast='float')
@@ -184,7 +184,7 @@ with tab3:
     lag = 3  # the lag can be adjusted as needed
     df_data_lagged_pm25 = create_lag_features(data, 'pm25', lag)
     df_data_lagged_pm25.reset_index(drop = True, inplace = True)
-    temp_path = '../models'
+    temp_path = './models'
     pathlib.Path(temp_path).mkdir(parents=True, exist_ok=True)
 
     # load the saved models
